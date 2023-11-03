@@ -1,11 +1,12 @@
 import logging
+import sys
 
 from http.server import BaseHTTPRequestHandler
 
 class handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        
+        logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
         logging.debug('This is a debug message')
         logging.info('This is an info message')
